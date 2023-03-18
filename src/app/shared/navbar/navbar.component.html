@@ -1,0 +1,11 @@
+<nav>
+    <ul>
+        <li *ngFor="let item of menu"
+            [routerLink]="item.ruta"
+            routerLinkActive="active"> 
+            <i *ngIf="item.icono" [class]="item.icono"></i>
+            {{ item.texto }}
+        </li>
+        <i class="fa-regular fa-user-bounty-hunter"></i>
+    </ul>
+</nav>
