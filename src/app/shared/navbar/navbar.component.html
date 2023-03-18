@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        <li *ngFor="let item of menu"
+            [routerLink]="item.ruta"
+            routerLinkActive="active"> 
+            {{ item.texto }}
+        </li>
+    </ul>
+</nav>
