@@ -1,0 +1,44 @@
+.header {
+    background: url("src/assets/images/background-g4d9ebd0a6.jpg") center center;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+}
+
+img {
+    width: 300px;
+    position: absolute;
+    top: 180px;
+    left: 40%;
+}
+
+.wrapper {
+    position: relative;
+    padding: 6em 0 9em 0;
+}
+
+.wrapper .title {
+    position: absolute;
+    top: -3.25em;
+    left: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    font-size: 0.9em;
+    width: 25em;
+    height: 3.25em;
+    line-height: 3.25em;
+    margin-bottom: -3.25em;
+    margin-left: -12.5em;
+    padding-top: 0.5em;
+}
+
+.wrapper-white {
+    background: #fff;
+}
+.wrapper-white .title {
+    background: #fff;
+    color: #484d55;
+}

@@ -16,15 +16,15 @@ export class NavbarComponent {
   menu: MenuItem[] = [
     {
       texto: 'inicio',
-      ruta: '/semillero/inicio'
+      ruta: '/semillero/home'
     },
     {
       texto: '¿Quiene somos?',
-      ruta: './semillero/quienes'
+      ruta: '/semillero/aboutUs'
     },
     {
       texto: 'Proyectos',
-      ruta: './semillero/projects'
+      ruta: '/semillero/projects'
     },
     {
       texto: 'Eventos',
@@ -37,12 +37,6 @@ export class NavbarComponent {
     {
       texto: 'Contactos',
       ruta: './semillero/contact'
-    },
-    {
-      icono: 'fa-solid fa-user-bounty-hunter',
-      texto: '',
-      ruta: ''
-
     }
 
   ];
