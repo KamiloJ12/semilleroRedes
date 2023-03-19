@@ -1,11 +1,7 @@
 nav {
     display: block;
     width: 100%;
-    position: absolute;
-    top: 2 rem;
-    left: 0;
     text-align: center;
-    background-color: #1c2632;
 }
 
 ul {
