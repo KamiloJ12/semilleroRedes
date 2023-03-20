@@ -9,6 +9,7 @@ import { EventsComponent } from './pages/events/events.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MembersComponent } from './pages/members/members.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
   ],
   imports: [
     CommonModule,
+    PrimeNgModule,
     SemilleroRoutingModule
   ]
 })
