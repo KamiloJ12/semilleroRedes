@@ -50,3 +50,73 @@ img {
     background: #f3f3f3;
     color: #484d55;
 }
+
+.seccion{
+    
+    border-top: solid 1px #b6adad;
+    padding-top: 3em;
+    padding-left: 5em;
+    position: relative;
+}
+
+.seccion1{
+    
+  
+    padding-top: 3em;
+    padding-left: 5em;
+    position: relative;
+}
+
+#features ul.actions {
+    margin-top: 5em;
+}
+
+ul.actions.special {
+    text-align: center;
+}
+ul.actions {
+    list-style: none;
+    padding-left: 0;
+    margin: 3em 0 0 0;
+}
+
+ul.actions li:first-child {
+    margin-left: 0;
+}
+
+ul.actions li {
+    display: inline-block;
+    margin: 0 0.75em 0 0.75em;
+    padding-left: 0;
+}
+
+
+input[type="button"].large, input[type="submit"].large, input[type="reset"].large, button.large, .button.large {
+    font-size: 1em;
+    min-width: 14em;
+}
+input[type="button"], input[type="submit"], input[type="reset"], button, .button {
+    -moz-transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    -ms-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+    display: inline-block;
+    background: #1c2632 ;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 0.35em;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 0 2.25em 0 2.25em;
+    font-size: 0.9em;
+    min-width: 12em;
+    height: 4em;
+    line-height: 4em;
+}
+
+
