@@ -14,7 +14,7 @@ img {
 
 .wrapper {
     position: relative;
-    padding: 4em 6em;
+    padding: 4em 6em 8em;
 }
 
 .wrapper .title {
@@ -49,4 +49,8 @@ img {
 .wrapper-black .title {
     background: #f3f3f3;
     color: #484d55;
+}
+
+.project {
+    padding: 1.5em;
 }
