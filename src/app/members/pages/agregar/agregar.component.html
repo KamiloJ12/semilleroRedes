@@ -2,11 +2,84 @@
 
 <div class="px-4 py-5 md:px-6 lg:px-8">
     <!-- Titulo -->
-    <div class="border-bottom-1 border-gray-200">
+    <div class="border-bottom-1 mb-5 border-gray-200">
         <h2 class="mt-0 mb-2 font-bold text-4xl">Miembros y funciones</h2>
         <p class="mt-0 mb-5 font-normal text-gray-600">Puede administrar fácilmente los miembros en esta página</p>
     </div>
 
+    <div class="grid border-bottom-1 border-gray-400 mb-8">
+        <div class="col-12 lg:col-2">
+            <div class="font-medium text-xl mb-3">
+                Miembros
+            </div>
+            <p class="m-0 p-0 line-heiht-3 mr-3 font-normal text-gray-600">
+                Agregar un nuevo miembro
+            </p>
+        </div>
+        <div class="col-12 lg:col-10">
+            <form class="grid p-fluid formgrid">
+                <div class="field mb-4 col-12">
+                    <label for="nombre"  class="font-medium">
+                        Nombre
+                    </label>
+                    <input type="text" pInputText id="nombre">
+                </div>
+                <div class="field mb-4 col-12">
+                    <label for="avatar" class="font-medium">
+                        Avatar
+                    </label>
+                    <div class="flex align-items-center">
+                        <img src="https://blocks.primeng.org/assets/images/blocks/avatars/circle/avatar-f-4.png"
+                             class="mr-4" alt="avatar">
+                        <p-fileUpload mode="basic" name="avatar" accept="image/*"
+                                      maxfilesize="1000000" 
+                                      styleClass="p-button-outlined p-button-secondary" 
+                                      chooseLabel="Cargar imagen">
+                        </p-fileUpload>
+                    </div>
+                </div>
+                <div class="field mb-4 col-12 md:col-8">
+                    <label for="correo"  class="font-medium">
+                        Correo
+                    </label>
+                    <input type="text" pInputText id="correo">
+                </div>
+                <div class="field mb-4 col-12 md:col-4">
+                    <label for="celular"  class="font-medium">
+                        Celular
+                    </label>
+                    <p-inputMask mask="(999) 999-9999" placeholder="(999) 999-9999"></p-inputMask>
+                </div>
+                <div class="filed mb-4 col-12">
+                    <p-button label="Agregar" styleClass="w-auto p-button-outlined"></p-button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="grid mb-6">
+        <div class="col-12 lg:col-2">
+            <div class="font-medium text-xl mb-3">
+                Roles
+            </div>
+            <p class="m-0 p-0 line-heiht-3 mr-3 font-normal text-gray-600">
+                Agregar un nuevo rol
+            </p>
+        </div>
+        <div class="col-12 lg:col-10">
+            <form class="grid p-fluid formgrid">
+                <div class="field mb-4 col-12">
+                    <label for="nombre"  class="font-medium">
+                        Nombre
+                    </label>
+                    <input type="text" pInputText id="nombre">
+                </div>
+                <div class="filed col-12">
+                    <p-button label="Agregar" styleClass="w-auto p-button-outlined"></p-button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 
 <app-footer></app-footer>
