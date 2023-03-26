@@ -1,10 +1,41 @@
-<nav>
-    <ul>
-        <li *ngFor="let item of menu"
-            [routerLink]="item.ruta"
-            routerLinkActive="active"> 
-            <i *ngIf="item.icono" [class]="item.icono"></i>
-            {{ item.texto }}
-        </li>
-    </ul>
+<nav class="bg-gray-900 relative px-6">
+    <div class="py-3 lg:p-2 flex align-items-center justify-content-between lg:static border-bottom-none lg:border-bottom-1 border-gray-800" style="min-height: 81px;">
+        <img src="https://blocks.primeng.org/assets/images/blocks/logos/bastion-300.svg" alt="logo" height="40">
+        <div class="flex aling-items-center">
+            <div pRipple class="block text-gray-400 border-round cursor-pointer lg:hidden transition-colors transition-duration-150"
+                    (click)="hideMenu = !hideMenu">
+                <i class="pi pi-bars text-4xl"></i>
+            </div>
+        </div>
+        <div class="lg:block absolute lg:static lg:w-auto w-full bg-gray-900 left-0 top-100 z-1 shadown-2 lg:shadown-none hidden">
+            <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row border-top-1 border-gray-800 lg:border-top-none">
+                <li>
+                    <div pRipple class="flex px-6 p-3 lg:px-3 align-items-center text-gray-400 hover:text-white hover:bg-gray-800 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+                        <img src="https://blocks.primeng.org/assets/images/blocks/avatars/circle/avatar-f-1.png" class="mr-3 lg:mr-0 w-2rem h-2rem" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="py-2 px-6 lg:px-0 shadown-2 lg:block absolute lg:static lg-auto w-full bg-gray-900 left-0 top-100 z-1 shadown-2" [ngClass]="{ 'hidden': hideMenu }">
+        <ul class="list-none p-0 m-0 flex lg:align-items-center flex-column lg:flex-row select-none">
+            <li *ngFor="let item of menu">
+                <a pRipple [routerLink]="item.routerLink" class="no-underline flex p-3 align-items-center text-gray-400 hover:text-white hover:bg-gray-800 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+                    <i class="{{ item.icon }} mr-2"></i>
+                    {{ item.label }}
+                </a>
+            </li>
+            <li class="border-top-1 border-gray-800 lg:hidden">
+                <div pRipple class="flex p-3 align-items-center text-gray-400 hover:text-white hover:bg-gray-800 font-medium border-round cursor-pointer transition-colors transition-duration-150">
+                    <img src="https://blocks.primeng.org/assets/images/blocks/avatars/circle/avatar-f-1.png" class="mr-3 w-2rem h-2rem" alt="">
+                    <div class="block">
+                        <div class="text-gray-400 font-medium">
+                            josefina lillard
+                        </div>
+                        <span class="text-gray-500 font-medium text-sm">Especialista en marketing</span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </nav>

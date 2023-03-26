@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
-interface MenuItem {
-  texto: string;
-  ruta: string;
-  icono?: string; 
-}
 
 @Component({
   selector: 'app-navbar',
@@ -13,31 +9,27 @@ interface MenuItem {
 })
 export class NavbarComponent {
 
+  hideMenu: boolean = false;
   menu: MenuItem[] = [
     {
-      texto: 'inicio',
-      ruta: '/semillero/home'
+      label: 'Hogar',
+      icon: 'pi pi-home',
+      routerLink: '/inicio'
     },
     {
-      texto: '¿Quiene somos?',
-      ruta: '/semillero/aboutUs'
+      label: 'Miembros',
+      icon: 'pi pi-users',
+      routerLink: '/miembros'
     },
     {
-      texto: 'Proyectos',
-      ruta: '/semillero/projects'
+      label: 'Eventos',
+      icon: 'pi pi-calendar-minus',
+      routerLink: '/eventos'
     },
     {
-      texto: 'Eventos',
-      ruta: './semillero/events'
-    },
-    {
-      texto: 'Integrantes',
-      ruta: './semillero/members'
-    },
-    {
-      texto: 'Contactos',
-      ruta: './semillero/contact'
+      label: 'Proyectos',
+      icon: 'pi pi-briefcase',
+      routerLink: '/proyectos'
     }
-
   ];
 }

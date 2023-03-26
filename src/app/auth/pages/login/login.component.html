@@ -1,0 +1,40 @@
+<div class="flex h-screen flex-wrap shadown-2">
+    
+    <div class="w-full lg:w-6 px-0 py-4 lg:p-7 bg-blue-50">
+
+        <p-carousel [value]="carouselArray" 
+                    [numVisible]="1" 
+                    [numScroll]="1" 
+                    [circular]="true"
+                    [showNavigators]="false"
+                    autoPlayInterval="500">
+
+            <ng-template let-product pTemplate="item">
+                <div class="product-item">
+                    <div class="product-item-content">
+                        <div class="mb-3">
+                            <img src="" [alt]="product.name" class="product-image" />
+                        </div>
+                        <div>
+                            <h4 class="mb-1">{{ product.name }}</h4>
+                            <p class="mt-0 mb-3">{{ product.price }}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+
+    </div>
+
+    <div class="w-full lg:w-6 p-4 lg:p-7 surface-card">
+        <h3 class="mb-7">Iniciar sesión</h3>
+        <label for="email" class="block text-900 font-medium mb-2">Correo electrónico</label>
+        <input type="text" pInputText id="email" class="w-full mb-4 p-3" placeholder="Dirección de correo electrónico" />
+
+        <label for="password" class="block text-900 font-medium mb-2">Contraseña</label>
+        <p-password styleClass="w-full mb-7" inputStyleClass="w-full p-3" inputId="password" placeholder="Contraseña" [toggleMask]="true"></p-password>
+
+        <p-button styleClass="w-full p-3" icon="pi pi-user" label="Iniciar sesión" (click)="login()"></p-button>
+    </div>
+
+</div>

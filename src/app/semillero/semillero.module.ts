@@ -10,6 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { MembersComponent } from './pages/members/members.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { SemilleroComponent } from './pages/semillero/semillero.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,12 +21,14 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     ContactComponent,
     EventsComponent,
     MembersComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    SemilleroComponent
   ],
   imports: [
     CommonModule,
     PrimeNgModule,
-    SemilleroRoutingModule
+    SemilleroRoutingModule,
+    SharedModule
   ]
 })
 export class SemilleroModule { }

@@ -6,10 +6,12 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { EventsComponent } from './pages/events/events.component';
 import { MembersComponent } from './pages/members/members.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
+import { SemilleroComponent } from './pages/semillero/semillero.component';
 
 const routes: Routes = [
   { 
     path: '',
+    component: SemilleroComponent,
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'aboutUs', component: AboutUsComponent },

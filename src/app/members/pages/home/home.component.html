@@ -1,0 +1,198 @@
+<app-navbar></app-navbar>
+
+<div class="px-4 py-5 md:px-6 lg:px-8">
+    <!-- Titulo -->
+    <div class="border-bottom-1 border-gray-200">
+        <h2 class="mt-0 mb-2 font-bold text-4xl">Miembros y funciones</h2>
+        <p class="mt-0 mb-5 font-normal text-gray-600">Puede administrar fácilmente los miembros en esta página</p>
+    </div>
+
+    <!-- Miembros -->
+    <div class="flex flex-wrap gap-3 py-6 justify-content-between border-bottom-1 border-gray-200">
+        <div class="flex-shrink-0 w-15rem">
+            <h3 class="mb-4 mt-0 font-medium text-xl">Miembros</h3>
+            <p class="mb-4 mt-0 font-normal">
+                Administrar los miembros del semillero
+            </p>
+            <p-button label="Agregar un nuevo miembro"
+                      styleClass="w-full p-button-outlined p-button-secondary mb-2"
+                      (click)="agregar()">
+            </p-button>
+            <p-button label="Eliminar miembros seleccionados"
+                      styleClass="w-full p-button-outlined p-button-danger">
+            </p-button>
+        </div>
+        <div class="w-full lg:w-9">
+            <div class="flex justify-content-end mb-3">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #inputTextMiembros (input)="dtMiembros.filterGlobal(inputTextMiembros.value, 'contains')"
+                        placeholder="Busqueda Global" />
+                </span>
+            </div>
+            <p-table #dtMiembros [value]="miembros" [(selection)]="miembrosSeleccionados" dataKey="id" 
+                     [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" 
+                     [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading"
+                     [paginator]="true" currentPageReportTemplate="Mostrando {first} - {last} de {totalRecords} miembros"
+                     [filterDelay]="0" [globalFilterFields]="['nombre', 'correo', 'fecha_ingreso']">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 4rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="nombre" style="min-width: 12rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Nombre
+                                <p-sortIcon field="nombre"></p-sortIcon>
+                                <p-columnFilter type="text" field="nombre" display="menu"
+                                                class="ml-auto">
+                                </p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="fecha_ingreso" style="min-width: 14rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Fecha de ingreso
+                                <p-sortIcon field="fecha_ingreso"></p-sortIcon>
+                                <p-columnFilter type="text" field="fecha_ingreso" display="menu"
+                                                class="ml-auto">
+                                </p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="width: 5rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-miembro>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <p-tableCheckbox [value]="miembro"></p-tableCheckbox>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Nombre</span>
+                            <div class="flex align-items-center gap-3">
+                                <p-image src="https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg" 
+                                         alt="Image" width="50" height="50" [preview]="true" class="border-circle" 
+                                         imageClass="border-circle">
+                                </p-image>
+                                <div>
+                                    <p class="mt-0 mb-2 font-medium text-lg ">
+                                        {{ miembro.nombre }}
+                                    </p>
+                                    <p class="mt-0 mb-2 font-normal">
+                                        {{ miembro.correo }}
+                                    </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Fecha de ingreso</span>
+                            <p class="mt-0 mb-2 font-normal">
+                                {{ miembro.fecha_ingreso  }}
+                            </p>
+                            <!-- {{ customer.date | date: 'MM/dd/yyyy' }} -->
+                        </td>
+                        <td>
+                            <p-button icon="pi pi-ellipsis-v" 
+                                      styleClass="p-button-secondary p-button-text"
+                                      (click)="miembroActivo = miembro; rolActivo = null; menu.toggle($event)">
+                            </p-button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="4" class="text-center">No se encontraron miembros registrados.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+    <!-- Roles -->
+    <div class="flex flex-wrap gap-3 py-6 justify-content-between border-bottom-1 border-gray-200">
+        <div class="flex-shrink-0 w-15rem">
+            <h3 class="mb-4 mt-0 font-medium text-xl">Roles</h3>
+            <p class="mb-4 mt-0 font-normal">
+                Administrar los roles del semillero
+            </p>
+            <p-button label="Agregar un nuevo rol"
+                      styleClass="w-full p-button-outlined p-button-secondary mb-2">
+            </p-button>
+            <p-button label="Eliminar roles seleccionados"
+                      styleClass="w-full p-button-outlined p-button-danger">
+            </p-button>
+        </div>
+        <div class="w-full lg:w-9">
+            <div class="flex justify-content-end mb-3">
+                <span class="p-input-icon-left">
+                    <i class="pi pi-search"></i>
+                    <input pInputText type="text" #inputTextRoles (input)="dtRoles.filterGlobal(inputTextRoles.value, 'contains')"
+                        placeholder="Busqueda Global" />
+                </span>
+            </div>
+            <p-table #dtRoles [value]="roles" [(selection)]="rolesSeleccionados" dataKey="id" 
+                     [rowHover]="true" [rows]="10" [showCurrentPageReport]="true" 
+                     [rowsPerPageOptions]="[10, 25, 50]" [loading]="loading"
+                     [paginator]="true" currentPageReportTemplate="Mostrando {first} - {last} de {totalRecords} roles"
+                     [filterDelay]="0" [globalFilterFields]="['apodo']">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 4rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th pSortableColumn="apodo" style="min-width: 12rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Apodo
+                                <p-sortIcon field="apodo"></p-sortIcon>
+                                <p-columnFilter type="text" field="apodo" display="menu"
+                                                class="ml-auto">
+                                </p-columnFilter>
+                            </div>
+                        </th>
+                        <th pSortableColumn="miembros" style="min-width: 14rem">
+                            <div class="flex justify-content-between align-items-center">
+                                Miembros
+                                <p-sortIcon field="miembros"></p-sortIcon>
+                                <p-columnFilter type="number" field="miembros" display="menu"
+                                                class="ml-auto">
+                                </p-columnFilter>
+                            </div>
+                        </th>
+                        <th style="width: 5rem"></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rol>
+                    <tr class="p-selectable-row">
+                        <td>
+                            <p-tableCheckbox [value]="rol"></p-tableCheckbox>
+                        </td>
+                        <td>
+                            <span class="p-column-title">Apodo</span>
+                            {{ rol.apodo }}
+                        </td>
+                        <td>
+                            <span class="p-column-title">Miembros</span>
+                            <p class="mt-0 mb-2 font-normal">
+                                {{ rol.miembros  }}
+                            </p>
+                        </td>
+                        <td>
+                            <p-button icon="pi pi-ellipsis-v" 
+                                      styleClass="p-button-secondary p-button-text"
+                                      (click)="rolActivo = rol; miembroActivo = null; menu.toggle($event)">
+                            </p-button>
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                    <tr>
+                        <td colspan="4" class="text-center">No se encontraron roles registrados.</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+
+    <p-menu #menu [model]="menuItems" appendTo="body" [popup]="true"></p-menu>
+</div>
+
+<app-footer></app-footer>
