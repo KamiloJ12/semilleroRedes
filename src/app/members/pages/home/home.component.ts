@@ -62,9 +62,9 @@ export class HomeComponent implements OnInit {
             icon: 'pi pi-refresh',
             command: () => {
               if( this.miembroActivo ){
-                alert('update miembro - ' + this.miembroActivo.id);
+                this.router.navigate(['./miembros/editar', this.miembroActivo.id]);
               }else {
-                alert('update rol - ' + this.rolActivo.id);
+                this.router.navigate(['./miembros/roles/editar', this.rolActivo.id]);
               }
             }
           },
@@ -79,7 +79,7 @@ export class HomeComponent implements OnInit {
       }
     ];
   }
-  
+
   agregar(): void {
     this.router.navigate(['./miembros/agregar']);
   }

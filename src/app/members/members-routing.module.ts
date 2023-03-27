@@ -9,6 +9,8 @@ const routes: Routes = [
     children: [
       { path: 'listado', component: HomeComponent },
       { path: 'agregar', component: AgregarComponent },
+      { path: 'editar/:id', component: AgregarComponent },
+      { path: 'roles/editar/:id', component: AgregarComponent },
       { path: '**', redirectTo: 'listado' }
     ]
   }
