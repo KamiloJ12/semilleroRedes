@@ -13,7 +13,10 @@
                 Miembros
             </div>
             <p class="m-0 p-0 line-heiht-3 mr-3 font-normal text-gray-600">
-                Agregar un nuevo miembro
+                {{ 
+                    ( miembro.id ) ? 'Editar' : 'Agregar un nuevo'
+                }}
+                miembro
             </p>
         </div>
         <div class="col-12 lg:col-10">
@@ -51,7 +54,11 @@
                     <p-inputMask mask="(999) 999-9999" placeholder="(999) 999-9999"></p-inputMask>
                 </div>
                 <div class="filed mb-4 col-12">
-                    <p-button label="Agregar" styleClass="w-auto p-button-outlined"></p-button>
+                    <p-button label="Agregar" styleClass="w-auto p-button-outlined mr-2"></p-button>
+                    <p-button label="Cancelar" 
+                              styleClass="w-auto p-button-outlined p-button-danger"
+                              (click)="cancelar()"
+                    ></p-button>
                 </div>
             </form>
         </div>
@@ -63,7 +70,10 @@
                 Roles
             </div>
             <p class="m-0 p-0 line-heiht-3 mr-3 font-normal text-gray-600">
-                Agregar un nuevo rol
+                {{ 
+                    ( rol.id ) ? 'Editar' : 'Agregar un nuevo'
+                }} 
+                rol
             </p>
         </div>
         <div class="col-12 lg:col-10">
@@ -75,7 +85,11 @@
                     <input type="text" pInputText id="nombre">
                 </div>
                 <div class="filed col-12">
-                    <p-button label="Agregar" styleClass="w-auto p-button-outlined"></p-button>
+                    <p-button label="Agregar" styleClass="w-auto p-button-outlined mr-2"></p-button>
+                    <p-button label="Cancelar" 
+                              styleClass="w-auto p-button-outlined p-button-danger"
+                              (click)="cancelar()"
+                    ></p-button>
                 </div>
             </form>
         </div>
