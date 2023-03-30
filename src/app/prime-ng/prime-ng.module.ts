@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { ButtonModule } from 'primeng/button';
+import { CalendarModule } from 'primeng/calendar';
 import { CardModule } from 'primeng/card';
 import { CarouselModule } from 'primeng/carousel';
 import { ChartModule } from 'primeng/chart';
+import { EditorModule } from 'primeng/editor';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ImageModule } from 'primeng/image';
 import { InputMaskModule } from 'primeng/inputmask';
@@ -21,9 +23,11 @@ import { TableModule } from 'primeng/table';
   exports: [
     BreadcrumbModule,
     ButtonModule,
+    CalendarModule,
     CardModule,
     CarouselModule,
     ChartModule,
+    EditorModule,
     FileUploadModule,
     ImageModule,
     InputMaskModule,

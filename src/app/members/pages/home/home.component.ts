@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuItem } from 'primeng/api';
-import { Menu } from 'primeng/menu';
+import { Miembro } from 'src/app/shared/interfaces/miembro';
+import { Rol } from 'src/app/shared/interfaces/rol';
+
 
 @Component({
   selector: 'app-home',
@@ -10,13 +12,13 @@ import { Menu } from 'primeng/menu';
 })
 export class HomeComponent implements OnInit {
 
-  miembroActivo: any = {};
-  miembros: any[] = [];
-  miembrosSeleccionados: any[] = [];
+  miembroActivo: Miembro | null = null;
+  miembros: Miembro[] = [];
+  miembrosSeleccionados: Miembro[] = [];
 
-  rolActivo: any = {};
-  roles: any[] = [];
-  rolesSeleccionados: any[] = [];
+  rolActivo: Rol | null = null;
+  roles: Rol[] = [];
+  rolesSeleccionados: Rol[] = [];
 
   loading: boolean = false;
   
@@ -30,13 +32,15 @@ export class HomeComponent implements OnInit {
         id: 1850,
         nombre: 'Camilo Jaimes',
         correo: 'cristiancamilojv@ufps.edu.co',
-        fecha_ingreso: '30 de octubre de 2022'
+        fecha_ingreso: '30 de octubre de 2022',
+        celular: '3014202551'
       },
       {
         id: 8502,
         nombre: 'Angie Jaimes',
         correo: 'angieestefaniajave@ufps.edu.co',
-        fecha_ingreso: '14 de julio de 2022'
+        fecha_ingreso: '14 de julio de 2022',
+        celular: '3045202123'
       }
     ];
 
@@ -64,7 +68,7 @@ export class HomeComponent implements OnInit {
               if( this.miembroActivo ){
                 this.router.navigate(['./miembros/editar', this.miembroActivo.id]);
               }else {
-                this.router.navigate(['./miembros/roles/editar', this.rolActivo.id]);
+                this.router.navigate(['./miembros/roles/editar', this.rolActivo?.id]);
               }
             }
           },
@@ -72,7 +76,7 @@ export class HomeComponent implements OnInit {
             label: 'Eliminar',
             icon: 'pi pi-times',
             command: () => {
-              alert('delete - '+ this.miembroActivo.id);
+              alert('delete - '+ this.miembroActivo?.id);
             }
           }
         ]

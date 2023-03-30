@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<div class="px-4 py-5 md:px-6 lg:px-8">
+    <!-- Titulo -->
+    <div class="border-bottom-1 mb-5 border-gray-200">
+        <h2 class="mt-0 mb-2 font-bold text-4xl">Eventos</h2>
+        <p class="mt-0 mb-5 font-normal text-gray-600">Puede administrar fácilmente los eventos en esta página</p>
+    </div>
+
+    <div class="grid border-bottom-1 border-gray-400 mb-8">
+        <div class="col-12 lg:col-2">
+            <div class="font-medium text-xl mb-3">
+                Eventos
+            </div>
+            <p class="m-0 p-0 line-heiht-3 mr-3 font-normal text-gray-600">
+                {{ 
+                    ( evento?.id ) ? 'Editar' : 'Agregar un nuevo'
+                }}
+                evento
+            </p>
+        </div>
+        <div class="col-12 lg:col-10">
+            <form class="grid p-fluid formgrid">
+                <div class="field mb-4 col-12">
+                    <label for="titulo" class="font-medium">
+                        Titulo
+                    </label>
+                    <input type="text" pInputText id="titulo">
+                </div>
+                <div class="field mb-4 col-12">
+                    <label for="descripcion" class="font-medium">
+                        Decripcion
+                    </label>
+                    <p-editor id="descripcion" [(ngModel)]="text" [style]="{ height: '320px', width: '100%' }">
+                        <ng-template pTemplate="header">
+                            <span class="ql-formats">
+                                <select type="button" class="ql-header ml-4" aria-label="Header"></select>
+                                <select type="button" class="ql-size mr-4" aria-label="Size"></select>
+                                
+                                <button type="button" class="ql-bold " aria-label="Bold"></button>
+                                <button type="button" class="ql-italic" aria-label="Italic"></button>
+                                <button type="button" class="ql-underline mr-4" aria-label="Underline"></button>
+                                <button type="button" class="ql-blockquote" aria-label="Blockquote"></button>
+                                <button type="button" class="ql-indent" aria-label="Indent"></button>
+                                <button type="button" class="ql-list" aria-label="List"></button>
+                                <select class="ql-align" aria-label="Align"></select>
+                            </span>
+                        </ng-template>
+                    </p-editor>
+                </div>
+                <div class="field mb-4 col-7">
+                    <label for="url" class="font-medium">
+                        Url
+                    </label>
+                    <input type="url" pInputText id="url">
+                </div>
+                <div class="field mb-4 col-5">
+                    <label for="fecha" class="font-medium">
+                        Fecha inicio - fin
+                    </label>
+                    <p-calendar selectionMode="range" [readonlyInput]="true"></p-calendar>
+                </div>
+                <div class="filed mb-4 col-12">
+                    <p-button label="Agregar" styleClass="w-auto p-button-outlined mr-2"></p-button>
+                    <p-button label="Cancelar" 
+                              styleClass="w-auto p-button-outlined p-button-danger"
+                              (click)="cancelar()"
+                    ></p-button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<app-footer></app-footer>
