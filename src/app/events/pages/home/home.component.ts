@@ -56,6 +56,6 @@ export class HomeComponent implements OnInit {
   }
 
   agregar(): void {
-
+    this.router.navigate(['./eventos/agregar']);
   }
 }

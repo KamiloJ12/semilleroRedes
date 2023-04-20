@@ -44,19 +44,6 @@ export class HomeComponent implements OnInit {
       }
     ];
 
-    this.roles = [
-      {
-        id: 230,
-        apodo: 'Lider de proyecto',
-        miembros: 4  
-      },
-      {
-        id: 855,
-        apodo: 'integrante',
-        miembros: 15
-      }
-    ];
-
     this.menuItems = [
       {
         label: 'Opciones',
@@ -65,11 +52,7 @@ export class HomeComponent implements OnInit {
             label: 'Actualizar',
             icon: 'pi pi-refresh',
             command: () => {
-              if( this.miembroActivo ){
-                this.router.navigate(['./miembros/editar', this.miembroActivo.id]);
-              }else {
-                this.router.navigate(['./miembros/roles/editar', this.rolActivo?.id]);
-              }
+              this.router.navigate(['./miembros/editar', this.miembroActivo?.id]);
             }
           },
           {

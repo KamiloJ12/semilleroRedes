@@ -15,16 +15,19 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
     this.carouselArray = [
       {
-        name: 'Titulo # 1',
-        price: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './assets/images/logo_UFPS.png',
+        name: 'Logo UFPS',
+        width: '520'
       },
       {
-        name: 'Titulo # 2',
-        price: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './assets/images/logo_ingieneria_sistemas.png',
+        name: 'Logo Ingieneria de Sistemas',
+        width: '300'
       },
       {
-        name: 'Titulo # 3',
-        price: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+        image: './assets/images/logo_SIREDSE_2.png',
+        name: 'Logo Semillero',
+        width: '390'
       }
     ];
   }
